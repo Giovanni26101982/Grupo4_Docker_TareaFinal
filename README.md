@@ -33,12 +33,12 @@ POSTGRES_USER=flowise_user
 POSTGRES_PASSWORD=flowise_pass
 POSTGRES_DB=flowise
 ```
-##▶️ Levantar servicios
+## ▶️ Levantar servicios
 
 ```bash
 docker compose up -d
 ```
-⏹️ Detener servicios
+## ⏹️ Detener servicios
 ```bash
 docker compose down
 ```
@@ -46,10 +46,10 @@ docker compose down
 ```bash
 docker compose down -v
 ```
-🌐 Acceso
+## 🌐 Acceso
 - Flowise: http://localhost:3000
 
-🛠️ Buenas prácticas aplicadas
+## 🛠️ Buenas prácticas aplicadas
 - Variables sensibles en .env
 
 - Servicios separados (flowise y flowise_db)
