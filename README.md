@@ -69,6 +69,66 @@ docker rmi <image_id>
 
 --- 
 
+5. **Ejecutar docker compose:**
+
+```bash
+docker compose up --build -d
+```
+<img width="886" height="783" alt="image" src="https://github.com/user-attachments/assets/129cef40-9929-4eda-885d-4307f5f0d347" />
+
+--- 
+
+6. **Verificar el estado de los contenedores:**
+
+```bash
+docker ps -a
+```
+<img width="886" height="102" alt="image" src="https://github.com/user-attachments/assets/3c72451e-be44-42ad-ac7b-02f621ceacc9" />
+
+   - En este caso la base de datos (flowise-db) está Up (healthy), pero el contenedor de Flowise aparece en: Restarting (0) 23 secongs ago
+---
+
+7. **Verificar el Log**
+
+```bash
+docker logs -f flowise
+```
+<img width="886" height="39" alt="image" src="https://github.com/user-attachments/assets/e0524bae-5f5a-426c-902b-7fb7f136b87f" />
+
+<img width="886" height="760" alt="image" src="https://github.com/user-attachments/assets/eefe7c5a-f518-42bb-8115-903d95cff636" />
+
+```bash
+Se repite en bucle
+Flowiseai Server
+VERSION
+  flowise/1.6.3 linux-x64 node-v18.20.1
+
+USAGE
+  $ flowise [COMMAND]
+COMMANDS
+  start
+Flowiseai Server
+VERSION
+  flowise/1.6.3 linux-x64 node-v18.20.1
+USAGE
+  $ flowise [COMMAND]
+COMMANDS
+  Start
+.
+.
+.
+```
+   Eso significa que la imagen oficial de Flowise no arranca el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
+---
+
+8. **Se modifica el .yml para solucionar el error**
+
+```bash
+Antes -> command: ["flowise"]
+Nuevo -> command: ["flowise", "start"]
+```
+---
+
 ## ⚙️ Configuración
 Editar el archivo `.env` para personalizar puertos, credenciales y nombres de base de datos.
 
