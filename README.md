@@ -17,6 +17,8 @@
 
 Este proyecto despliega **Flowise** con una base de datos **PostgreSQL** dedicada, utilizando **Docker Compose**.
 
+El objetivo de este trabajo es desplegar una aplicación con Flowise, integrada con su propia base de datos PostgreSQL, utilizando Docker Compose. 
+
 ---
 
 ## 🚀 Requisitos previos
