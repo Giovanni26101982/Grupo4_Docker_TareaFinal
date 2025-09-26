@@ -97,8 +97,8 @@ docker logs -f flowise
 
 <img width="886" height="760" alt="image" src="https://github.com/user-attachments/assets/eefe7c5a-f518-42bb-8115-903d95cff636" />
 
+   - Se repite en bucle
 ```bash
-Se repite en bucle
 Flowiseai Server
 VERSION
   flowise/1.6.3 linux-x64 node-v18.20.1
@@ -118,7 +118,7 @@ COMMANDS
 .
 .
 ```
-   Eso significa que la imagen oficial de Flowise no arranca el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
+   - Eso significa que la imagen oficial de Flowise no arranca el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
 ---
 
 8. **Se modifica el .yml para solucionar el error**
@@ -127,6 +127,35 @@ COMMANDS
 Antes -> command: ["flowise"]
 Nuevo -> command: ["flowise", "start"]
 ```
+---
+
+9. **Volver a crear el contenerdo**
+
+```bash
+docker compose down
+```
+<img width="886" height="105" alt="image" src="https://github.com/user-attachments/assets/a8795069-4d2c-4d74-a4e3-16bb55252814" />
+
+```bash
+docker compose up -d –build
+```
+<img width="886" height="121" alt="image" src="https://github.com/user-attachments/assets/d497b4e0-af40-40fb-be4c-ba1b259d9071" />
+
+```bash
+docker ps -a
+```
+<img width="886" height="103" alt="image" src="https://github.com/user-attachments/assets/3486b1b1-1ec6-4ac3-8daa-ab88ec282de7" />
+
+---
+
+10. **Validar la navegación a la dirección local del contenedor en el host**
+
+```bash
+[Antes -> command: ["flowise"]
+Nuevo -> command: ["flowise", "start"]](http://localhost:3000/)
+```
+<img width="886" height="716" alt="image" src="https://github.com/user-attachments/assets/8b069289-49ef-47db-a526-4144849234bd" />
+
 ---
 
 ## ⚙️ Configuración
