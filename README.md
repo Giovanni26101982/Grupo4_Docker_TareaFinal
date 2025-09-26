@@ -171,7 +171,7 @@ http://localhost:3000/
 
 
 
-## ✅ Conclusiones - Recomendaciones
+## ✅ Conclusiones
 
 1. **Compatibilidad de versión de Compose**
 
@@ -188,26 +188,31 @@ http://localhost:3000/
 
 3.	**Ejecución del contenedor Flowise**
    
-   - El contenedor entraba en bucle de reinicios porque la imagen oficial requiere ejecutar explícitamente el comando flowise start.
-   - Al añadir command: ["flowise", "start"] en el docker-compose.yml, el servicio se inicializó correctamente y quedó accesible en el puerto configurado.
+      - El contenedor entraba en bucle de reinicios porque la imagen oficial requiere ejecutar explícitamente el comando flowise start.
+      - Al añadir command: ["flowise", "start"] en el docker-compose.yml, el servicio se inicializó correctamente y quedó accesible en el puerto configurado.
      
 4.	**Base de datos y persistencia**
 
-   - El contenedor PostgreSQL respondió como healthy, lo que confirma que la configuración de credenciales (POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB) fue correcta.
-   - Se definieron volúmenes (flowise_db_data y flowise_home_data) para garantizar persistencia de datos y configuraciones de Flowise.
+      - El contenedor PostgreSQL respondió como healthy, lo que confirma que la configuración de credenciales (POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB) fue correcta.
+      - Se definieron volúmenes (flowise_db_data y flowise_home_data) para garantizar persistencia de datos y configuraciones de Flowise.
 
-## 🛠️ Recomendaciones
+## 🛠️ Recomendaciones para el despliegue correcto
 
-## 🌐 Acceso
-- Flowise: http://localhost:3000
+1. **Requisitos previos de la máquina**
+      
+      - Contar con al menos 5 GB libres en disco para imágenes, capas y volúmenes de Docker.
+      - Memoria RAM mínima: 2 GB disponibles (Flowise + Postgres son relativamente livianos, pero requieren cierto buffer).
+      - Tener instalado Docker Engine y Docker Compose V2 (docker compose).
 
-## 🛠️ Buenas prácticas aplicadas
-- Variables sensibles en .env
+2.	**Archivo .env bien configurado**
+   
+      - Definir correctamente:
+         - POSTGRES_IMAGE, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD.
+         - FLOWISE_IMAGE, FLOWISE_PORT, FLOWISE_USERNAME, FLOWISE_PASSWORD.
 
-- Servicios separados (flowise y flowise_db)
+3.	**Archivo docker-compose.yml validado**
 
-- Red personalizada (flowise_network)
+      - Confirmar que la sintaxis YAML es correcta (docker compose config).
+      - Incluir el command: ["flowise", "start"] en el servicio flowise.
+      - Definir restart: unless-stopped para garantizar alta disponibilidad.
 
-- Persistencia con volúmenes (flowise_db_data)
-
-- Sin bind mounts → aplicación portable
