@@ -39,7 +39,7 @@ docker system df
 2. **Liberar espacio de imágenes/volúmenes huérfanos**
 
 ```bash
-docker system prune -af –volumes
+docker system prune -af –-volumes
 ```
 <img width="886" height="789" alt="image" src="https://github.com/user-attachments/assets/ed539125-df58-4177-84b1-f838522829ef" />
   
@@ -61,7 +61,7 @@ docker images --digests --no-trunc --format "table {{.Repository}}\t{{.Tag}}\t{{
 
 --- 
 
-4. **Eliminarlas si existen:**
+4. **Eliminar imágenes si existen:**
 
 ```bash
 docker rmi <image_id>
@@ -171,29 +171,33 @@ http://localhost:3000/
 
 
 
-## ⚙️ Configuración
-Editar el archivo `.env` para personalizar puertos, credenciales y nombres de base de datos.
+## ✅ Conclusiones - Recomendaciones
 
-Ejemplo:
-```ini
-FLOWISE_PORT=3000
-POSTGRES_USER=flowise_user
-POSTGRES_PASSWORD=flowise_pass
-POSTGRES_DB=flowise
-```
-## ▶️ Levantar servicios
+1. **Compatibilidad de versión de Compose**
 
-```bash
-docker compose up -d
-```
-## ⏹️ Detener servicios
-```bash
-docker compose down
-```
-⏹️ Detener y eliminar volúmenes
-```bash
-docker compose down -v
-```
+   -	La instrucción name: solo es reconocida en la especificación moderna de Compose (ejecutando docker compose en lugar de docker-compose).
+     <img width="886" height="117" alt="image" src="https://github.com/user-attachments/assets/9d6de6da-b703-4fc5-a47b-2afc23410a30" />
+
+   -	Se detectó que version: ya es obsoleto en Compose V2, por lo que puede omitirse para evitar advertencias.
+     <img width="711" height="441" alt="image" src="https://github.com/user-attachments/assets/a68e5832-6cc0-4540-a947-db94d9bbd159" />
+
+2. **Gestión de espacio en disco**
+
+   - Durante la descarga de la imagen flowiseai/flowise:1.6.3 se produjo un error de “no space left on device”.
+   - Se resolvió mediante limpieza de imágenes, volúmenes y contenedores no utilizados, confirmando la importancia de tener espacio disponible antes de la instalación.
+
+3.	**Ejecución del contenedor Flowise**
+   
+   - El contenedor entraba en bucle de reinicios porque la imagen oficial requiere ejecutar explícitamente el comando flowise start.
+   - Al añadir command: ["flowise", "start"] en el docker-compose.yml, el servicio se inicializó correctamente y quedó accesible en el puerto configurado.
+     
+4.	**Base de datos y persistencia**
+
+   - El contenedor PostgreSQL respondió como healthy, lo que confirma que la configuración de credenciales (POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB) fue correcta.
+   - Se definieron volúmenes (flowise_db_data y flowise_home_data) para garantizar persistencia de datos y configuraciones de Flowise.
+
+## 🛠️ Recomendaciones
+
 ## 🌐 Acceso
 - Flowise: http://localhost:3000
 
