@@ -151,12 +151,25 @@ docker ps -a
 10. **Validar la navegación a la dirección local del contenedor en el host**
 
 ```bash
-[Antes -> command: ["flowise"]
-Nuevo -> command: ["flowise", "start"]](http://localhost:3000/)
+http://localhost:3000/
 ```
 <img width="886" height="716" alt="image" src="https://github.com/user-attachments/assets/8b069289-49ef-47db-a526-4144849234bd" />
 
 ---
+
+11. **Accesar utilizando las credenciales del .env**
+
+<img width="886" height="693" alt="image" src="https://github.com/user-attachments/assets/1a14e45d-9a39-441f-b158-022fe8e47c24" />
+
+---
+
+12. **Validar la aplicación de Flowise**
+
+<img width="886" height="673" alt="image" src="https://github.com/user-attachments/assets/279384b7-444d-41af-9f24-6e1247f84295" />
+
+---
+
+
 
 ## ⚙️ Configuración
 Editar el archivo `.env` para personalizar puertos, credenciales y nombres de base de datos.
