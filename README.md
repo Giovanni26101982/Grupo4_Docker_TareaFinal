@@ -2,12 +2,25 @@
 
 # Despliegue de Flowise con PostgreSQL en Docker Compose
 
+## 🚀 Integrantes
+| Nro. | Nombre | Link |
+|------|---------|---------|
+| 1 | Giovanni Xavier Baño Jaya | https://github.com/Giovanni26101982/Grupo4_Docker_TareaFinal |
+| 2 | Portero Salas Onofre Lolislao | https://github.com/oportero/Grupo4_Docker_TareaFinal |
+| 3 | Jara Pauta Cesar Paúl | https://github.com/PaulJara84/Grupo4_Docker_TareaFinal |
+| 4 | Maldonado Flores Oscar Alexander | https://github.com/Oscar112248/Grupo4_Docker_TareaFinal |
+| 5 | Balarezo Leon Ricardo Martin | https://github.com/TinchoXD/Grupo4_Docker_TareaFinal |
+
+---
+
+## 📖 Introducción
+
 Este proyecto despliega **Flowise** con una base de datos **PostgreSQL** dedicada, utilizando **Docker Compose**.
 
 ---
 
 ## 🚀 Requisitos previos
-- Docker Engine instalado
+- Docker instalado
 - Docker Compose instalado
 
 ---
