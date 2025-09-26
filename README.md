@@ -93,8 +93,6 @@ docker ps -a
 ```bash
 docker logs -f flowise
 ```
-<img width="886" height="39" alt="image" src="https://github.com/user-attachments/assets/e0524bae-5f5a-426c-902b-7fb7f136b87f" />
-
 <img width="886" height="760" alt="image" src="https://github.com/user-attachments/assets/eefe7c5a-f518-42bb-8115-903d95cff636" />
 
    - Se repite en bucle
@@ -118,7 +116,7 @@ COMMANDS
 .
 .
 ```
-   - Eso significa que la imagen oficial de Flowise no arranca el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
+   - Eso significa que la imagen oficial de Flowise no arranca en el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
 ---
 
 8. **Se modifica el .yml para solucionar el error**
