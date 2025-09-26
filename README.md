@@ -7,7 +7,7 @@ Este proyecto despliega **Flowise** con una base de datos **PostgreSQL** dedicad
 ---
 
 ## 🚀 Requisitos previos
-- Docker instalado
+- Docker Engine instalado
 - Docker Compose instalado
 
 ---
@@ -85,7 +85,7 @@ docker ps -a
 ```
 <img width="886" height="102" alt="image" src="https://github.com/user-attachments/assets/3c72451e-be44-42ad-ac7b-02f621ceacc9" />
 
-   - En este caso la base de datos (flowise-db) está Up (healthy), pero el contenedor de Flowise aparece en: Restarting (0) 23 secongs ago
+   - En este caso la base de datos (flowise-db) está `Up (healthy)`, pero el contenedor de `Flowise` aparece en: `Restarting (0) 23 secongs ago`
 ---
 
 7. **Verificar el Log**
@@ -116,7 +116,7 @@ COMMANDS
 .
 .
 ```
-   - Eso significa que la imagen oficial de Flowise no arranca en el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
+   - Eso significa que la `imagen oficial de Flowise` no arranca en el servidor automáticamente, sino que requiere que le pases explícitamente el comando start.
 ---
 
 8. **Se modifica el .yml para solucionar el error**
@@ -198,9 +198,9 @@ http://localhost:3000/
 
 1. **Requisitos previos de la máquina**
       
-      - Contar con al menos 5 GB libres en disco para imágenes, capas y volúmenes de Docker.
-      - Memoria RAM mínima: 2 GB disponibles (Flowise + Postgres son relativamente livianos, pero requieren cierto buffer).
-      - Tener instalado Docker Engine y Docker Compose V2 (docker compose).
+      - Contar con al menos `5 GB libres` en disco para imágenes, capas y volúmenes de Docker.
+      - Memoria RAM mínima: `2 GB disponibles` (Flowise + Postgres son relativamente livianos, pero requieren cierto buffer).
+      - Tener instalado `Docker Engine y Docker Compose V2` (docker compose).
 
 2.	**Archivo .env bien configurado**
    
