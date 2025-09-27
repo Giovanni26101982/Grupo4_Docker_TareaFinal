@@ -29,12 +29,13 @@ El objetivo de este trabajo es desplegar una aplicación con Flowise, integrada 
      ```
 <img width="1125" height="305" alt="image" src="https://github.com/user-attachments/assets/3b02a6b7-49a1-42c2-a1af-cdb5f3eb8703" />
 
-
    - Navegar a la carpeta descargada 
      ```bash
      cd Grupo4_Docker_TareaFinal/
      ```
-imagen
+<img width="1123" height="64" alt="tarea final" src="https://github.com/user-attachments/assets/96636ef1-0f24-421d-a876-0c1f684a148c" />
+
+
 ---
 
 ## 🚀 Requisitos previos
