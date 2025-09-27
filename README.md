@@ -23,10 +23,17 @@ El objetivo de este trabajo es desplegar una aplicación con Flowise, integrada 
 
 ## 🖥️ Descarga del repositorio
 
-   - Descargar el repositorio git clone https://github.com/TinchoXD/Grupo4_Docker_TareaFinal.git
-<img width="886" height="92" alt="image" src="https://github.com/user-attachments/assets/5c2a5a9b-8cf6-45db-9cae-5a96149a2aae" />
+   - Descargar el repositorio
+     ```bash
+     git clone https://github.com/Giovanni26101982/Grupo4_Docker_TareaFinal.git
+     ```
+<img width="1125" height="305" alt="image" src="https://github.com/user-attachments/assets/3b02a6b7-49a1-42c2-a1af-cdb5f3eb8703" />
 
-   - Navegar a la carpeta descargada cd Grupo4_Docker_TareaFinal/
+
+   - Navegar a la carpeta descargada 
+     ```bash
+     cd Grupo4_Docker_TareaFinal/
+     ```bash
 imagen
 ---
 
