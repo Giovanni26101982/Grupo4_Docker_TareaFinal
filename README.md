@@ -33,7 +33,7 @@ El objetivo de este trabajo es desplegar una aplicación con Flowise, integrada 
    - Navegar a la carpeta descargada 
      ```bash
      cd Grupo4_Docker_TareaFinal/
-     ```bash
+     ```
 imagen
 ---
 
